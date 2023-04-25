@@ -5,7 +5,7 @@ public class AppTest {
     private static App.ContactManager contactManager;
 
     public static void main(String[] args) {
-        contactManager = new App.ContactManager("App/contacts.txt");
+        contactManager = new App.ContactManager("contacts.txt");
 
         Scanner scanner = new Scanner(System.in);
 
