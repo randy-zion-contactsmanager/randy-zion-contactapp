@@ -5,7 +5,7 @@ public class AppTest {
     private static App.ContactManager contactManager;
 
     public static void main(String[] args) {
-        contactManager = new App.ContactManager("contacts.txt");
+        contactManager = new App.ContactManager("App/contacts.txt");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -50,10 +50,12 @@ public class AppTest {
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
         System.out.print("Enter phone number: ");
-        String phoneNumber = scanner.nextLine();
+        String phoneNumberInput = scanner.nextLine();
+        String phoneNumber = phoneNumberInput.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "$1-$2-$3");
         contactManager.addContact(name, phoneNumber);
         System.out.println("Contact added!.");
     }
+
 
     private static void searchContact(Scanner scanner) {
         System.out.print("Enter name to search: ");
